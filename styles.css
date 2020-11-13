@@ -1,0 +1,301 @@
+body{
+    font-family:Georgia;
+    margin:0;
+}
+
+.wrapper{
+    width:1000;
+    max-width:1180px;
+    padding:0 10px;
+    margin:0 auto;
+}
+
+h1.logo{
+    background-image:url("images/logo.png");
+    background-repeat:no-repeat;
+    width:100px;
+    text-indent:-10000px; /*screen readers*/
+    float:left;
+}
+
+header nav{
+    float:right;
+}
+
+header .wrapper::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+header nav h2{
+    text-indent:-10000px;/*screen readers*/
+    height:0; /* so it doesnt occupy space*/
+    margin:0;
+}
+
+header nav li{
+    float:left;
+    list-style-type:none; /*remove dots*/
+    margin: 10px 20px;
+}
+
+header nav li a{
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+}
+
+#main-banner, #main-banner img{
+    width:100%;
+}
+
+#main-banner img{
+    border-bottom:5px solid #f34949;
+}
+
+#home-menu h2{
+    background-image:url(images/menu-head.png);
+    background-repeat:no-repeat;
+    width:156px;
+    height:74px;
+    text-indent:-10000px;
+    margin:0 auto;
+    position:relative;
+    top:-4px;
+}
+
+#home-menu ul{
+    padding:0px;
+    list-style-type:none;
+}
+
+#home-menu ul::after{
+    content:"";
+    clear:both;
+    display:block;
+
+}
+
+#home-menu li{
+    float:left;
+    width:42%;
+    padding:0;
+    margin:20px 0 20px 8%
+}
+
+#home-menu li:nth-child(odd){
+    margin:20px 8% 20px 0;
+}
+
+.dish{
+    float:left;
+    color:#555;
+    font-weight:bold;
+    position:relative;
+    z-index:1; /*Stacking order*/
+    background:white; /*so that line can't be seen*/
+    padding-right:15px;
+
+}
+
+.price{
+    float:right;
+    color:#555;
+    font-weight:bold;
+    position:relative;
+    z-index:1;
+    background:white;
+    padding-left:15px;
+    
+}
+
+
+.description{
+    clear:both;
+    display:block;
+    color:#999;
+    font-style:italic;
+    font-size:14px;
+    padding-top:10px;
+    border-top:1px solid #ddd; 
+    position:relative;
+    top:-8px; /*line across*/
+}
+
+#featured{
+    margin-top:100px;
+}
+
+#featured ul{
+    padding:0;
+}
+
+#featured ul::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#featured li{
+    float:left;
+    width:23%;
+    margin:1%;
+    list-style-type:none;
+}
+
+#featured li img{
+    width:100%;
+    margin-bottom:10px;
+}
+
+#featured li a{
+    color:#333;
+    text-decoration:none;
+    float:left;
+}
+
+#featured li span{
+    float:right;
+    color:#333;
+}
+
+footer{
+    background:#3b3b3b;
+    margin-top:100px;
+    padding:30px 0;
+}
+
+footer::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+footer ul{
+    float:left;
+    padding:0;
+    list-style-type:none;
+    color:#eee;
+    width:21%;
+    margin:2%;
+}
+
+footer li{
+    margin:10px 0;
+}
+
+footer a{
+    color:#eee;
+    text-decoration: none;
+}
+
+/*tablets*/
+@media screen and (max-width:768px){
+    header nav{
+        float:none;
+        clear:left;
+        width:100%;
+    }
+
+    header nav::after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+
+    header nav ul{
+        margin:0;
+        padding:0;
+    }
+
+    h1.logo{
+        margin:10px auto 0;
+        float:none;
+    }
+
+    header nav ul li{
+        margin:10px 0;
+        width:20%;
+        padding:0;
+        text-align:center;
+    }
+
+    #featured li{
+        width:48%;
+    }
+
+    footer ul{
+        width:42%;
+        text-align:center;
+    }
+}
+
+/*mobiles*/
+@media screen and (max-width:480px){
+    #featured li{
+        width:90%;
+        margin: 20px 5%;
+    }
+
+    footer ul{
+        width:98%;
+        text-align:center;
+    }
+    
+    #home-menu li{
+        float:none;
+        width:96%;
+        margin: 30px 2% !important; /* to ovewrride nth child pseudos*/
+    }
+
+    /* IMPORTANT TRICK
+    #main-banner img{
+        position:relative;
+        width:180%;
+        left: -40%; /* to centralised to the text img*
+    } */
+
+    /*Can use picture element ^ for responsive images*/
+
+    .burger-nav{
+        
+        display:block;
+        height:40px;
+        widows: 100%;
+        background:url(images/burger1.jpg) 98% center;
+        background-repeat:no-repeat;
+        background-size:30px 30px;
+        background-color:#404040;
+        cursor: pointer;
+    }
+
+    header .wrapper{
+        width:100%;
+        padding:0;
+    }
+
+    header nav ul{
+        overflow:hidden;
+        background:#505050;
+        height:0;
+    }
+
+    header nav ul.open{
+        height:auto; /*IMPORTANT */
+    }
+
+    header nav ul li{
+        float:none;
+        text-align:center;
+        width:100%;
+        margin:0;
+    }
+
+    header nav ul li a{
+       color:#fff;
+       padding:10px;
+       border-bottom: 1px solid #404040;
+       display:block;
+       margin:0;
+    }
+}
